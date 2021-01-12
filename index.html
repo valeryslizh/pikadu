@@ -8,7 +8,7 @@
       href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet"  href="css/style.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/normalize.css" />
   </head>
 
@@ -210,6 +210,31 @@
         </section>
       </main>
       <aside class="sidebar">
+        <div class="login">
+          <form class="login-form">
+            <h2 class="login-title">Авторизация</h2>
+            <input
+              type="email"
+              class="login-input login-email"
+              name="email"
+              minlength="6"
+              required
+              placeholder="Email"
+            />
+            <input
+              type="password"
+              name=""
+              class="login-input login-pass"
+              name="password"
+              minlength="6"
+              required
+              placeholder="Password"
+            />
+            <a href="#" class="login-forget">Забыли пароль?</a>
+            <button class="button signin" type="submit">Войти</button>
+            <a href="#" class="signup">Регистрация</a>
+          </form>
+        </div>
         <div class="user">
           <a href="#" class="user-info">
             <img

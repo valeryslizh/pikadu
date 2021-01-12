@@ -5,6 +5,7 @@
           box-sizing: border-box;
   padding: 0;
   margin: 0;
+  text-decoration: none;
 }
 
 body {
@@ -275,6 +276,36 @@ body {
   width: 31%;
 }
 
+.login {
+  background: #FAFAFA;
+  border: 1px solid #E8E8E8;
+  padding: 15px 25px;
+}
+
+.login-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.login-input {
+  margin: 10px;
+  position: relative;
+  border-radius: 4px;
+  background: #FFFFFF;
+  overflow: hidden;
+  border: 1px solid #D9D9D9;
+  height: 32px;
+  font-family: "SFProDisplay-Semibold", sans-serif;
+  font-size: 14px;
+  line-height: 22px;
+  padding-left: 12px;
+}
+
 .user {
   background: #FAFAFA;
   border: 1px solid #E8E8E8;
@@ -288,6 +319,25 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+.signin {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.signup {
+  text-align: center;
+}
+
+.signin:hover {
+  -webkit-filter: opacity(80%);
+          filter: opacity(80%);
+}
+
+.signin:active {
+  -webkit-filter: brightness(90%);
+          filter: brightness(90%);
 }
 
 .user-avatar {
@@ -313,6 +363,7 @@ body {
 }
 
 .sidebar-nav {
+  display: none;
   background-color: #fff;
 }
 
@@ -357,9 +408,7 @@ body {
 }
 
 .button-new-post {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
