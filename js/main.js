@@ -6,6 +6,8 @@ menuToggle.addEventListener("click", function (event) {
   menu.classList.toggle("visible");
 });
 
+// еще кода
+
 const loginElem = document.querySelector(".login");
 const loginForm = document.querySelector(".login-form");
 const emailInput = document.querySelector(".login-email");
