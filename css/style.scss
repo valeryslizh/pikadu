@@ -5,7 +5,16 @@
     padding: 0;
     margin: 0;
     text-decoration: none;
-    
+
+}
+
+button:active,
+button:focus {
+    outline: none;
+}
+
+button::-moz-focus-inner {
+    border: 0;
 }
 
 body {
@@ -40,14 +49,24 @@ body {
 .header-nav {
     margin-left: 62px;
     margin-right: auto;
+    width: 50%;
 }
 
 .header-menu {
-    display: flex;
+    display: flex; 
     list-style: none;
+    &-item{
+        margin-right: 15px;
+    }
+    &-link{
+        text-decoration: none;
+        color: #E5E5E5;
+        font-weight:400;
+    }
 }
 
-.header-menu-link {
+
+.link {
     text-decoration: none;
     color: #FAFAFA;
     margin-right: 17px;
@@ -129,6 +148,11 @@ body {
 
 .posts {
     width: 67%;
+    display: none;
+}
+
+.posts.visible{
+    display: block;
 }
 
 .post {
@@ -165,7 +189,7 @@ body {
 .tags {
     margin-bottom: 22px;
     margin-top: 19px;
-
+    color: #BFBFBF;
 }
 
 .tag {
@@ -173,8 +197,12 @@ body {
     font-weight: normal;
     font-size: 14px;
     line-height: 22px;
-    margin-right: 10px;
+    margin-left: 10px;
     text-decoration: none;
+}
+
+.tag:first-child{
+    margin-left: 0;
 }
 
 .post-footer {
@@ -209,6 +237,40 @@ body {
     margin-right: 6px;
 }
 
+.edit {
+    background-color: transparent;
+    border: none;
+    margin-right: 5px;    
+}
+
+.edit-title{
+    margin-bottom: 10px;
+}
+
+.edit-container{
+    display: none;
+    background: #FAFAFA;
+    border-top: 1px solid #E8E8E8;
+    padding: 15px 25px;  
+    }
+
+    .edit-container.visible{
+        display: block;
+    }
+
+.edit-input{
+    display: block;
+    width: 100%;
+    margin: auto;
+  //  padding: 10px 10px;
+}
+
+.icon-edit {
+
+    width: 22px;
+    height: 23px;
+}
+
 .post-author {
     display: flex;
     flex-direction: row;
@@ -221,6 +283,7 @@ body {
     height: 34px;
     margin-left: 9px;
     border-radius: 4px;
+    object-fit: cover;
 }
 
 .author-username {
@@ -243,19 +306,18 @@ body {
     width: 31%;
 }
 
-.login{
+.login {
     background: #FAFAFA;
     border: 1px solid #E8E8E8;
     padding: 15px 25px;
-
 }
 
-.login-form{
+.login-form {
     display: flex;
     flex-direction: column;
 }
 
-.login-input{
+.login-input {
     margin: 10px;
     position: relative;
     border-radius: 4px;
@@ -263,7 +325,7 @@ body {
     overflow: hidden;
     border: 1px solid #D9D9D9;
     height: 32px;
-    font-family: "SFProDisplay-Semibold", sans-serif;    
+    font-family: "SFProDisplay-Semibold", sans-serif;
     font-size: 14px;
     line-height: 22px;
     padding-left: 12px;
@@ -271,39 +333,45 @@ body {
 
 .user {
     background: #FAFAFA;
-    border: 1px solid #E8E8E8;
-    padding: 15px 25px;
+    border: 1px solid #E8E8E8;      
+
+}
+
+.user-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 15px 25px;  
 }
 
-.signin{
+.signin {
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
-.signup{
+.signup {
     text-align: center;
 }
 
-.signin:hover{
+.signin:hover {
     filter: opacity(80%);
 }
 
-.signin:active{
+.signin:active {
     filter: brightness(90%);
 }
 
 .user-avatar {
     border-radius: 50%;
     margin-right: 17px;
+    object-fit: cover;
 }
 
 .user-info {
     display: flex;
     align-items: center;
     text-decoration: none;
+    margin-right: auto;
 }
 
 .user-name {
@@ -371,6 +439,10 @@ body {
     font-weight: normal;
     font-size: 16px;
     line-height: 24px;
+}
+
+.button-new-post.visible{
+    display: flex;
 }
 
 .icon-fire {
@@ -444,8 +516,13 @@ body {
 }
 
 .add-post {
-    display: flex;
+    display: none;
     flex-direction: column;
+    width: 67%;
+}
+
+.add-post.visible{
+    display: flex;
 }
 
 .button-outline {
@@ -469,12 +546,13 @@ body {
 }
 
 .add-title,
-.add-text {
+.add-text,
+.add-tags {
     background: #FFFFFF;
     border: 1px solid #E8E8E8;
     padding: 23px 30px;
     margin-bottom: 16px;
-
+    resize: none;
 }
 
 .add-text {
@@ -555,9 +633,8 @@ body {
         transform: translateX(0);
     }
 
-    .posts {
-        width: 100%;
-        ;
+    .posts {        
+        width: 100%;        
     }
 }
 

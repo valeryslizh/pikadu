@@ -10,6 +10,16 @@
     />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/normalize.css" />
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+            https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-database.js"></script>
+
+    <script src="/js/main.js" defer></script>
   </head>
 
   <body>
@@ -209,6 +219,35 @@
           </div>
         </section>
       </main>
+
+      <form action="#" class="add-post">
+        <input
+          type="text"
+          name="title"
+          class="add-title"
+          placeholder="Заголовок поста"
+        />
+        <textarea
+          name="text"
+          class="add-text"
+          placeholder="Текст вашего поста"
+        ></textarea>
+        <input
+          type="text"
+          name="tags"
+          class="add-tags"
+          placeholder="Добавьте теги через запятую"
+        />
+        <div class="add-buttons">
+          <button type="submit" class="button add-button">
+            <svg width="16px" height="16px" class="icon icon-fire">
+              <use xlink:href="img/icons.svg#fire"></use>
+            </svg>
+            Опубликовать пост
+          </button>
+        </div>
+      </form>
+
       <aside class="sidebar">
         <div class="login">
           <form class="login-form">
@@ -236,22 +275,53 @@
           </form>
         </div>
         <div class="user">
-          <a href="#" class="user-info">
-            <img
-              width="40"
-              height="40"
-              src="img/avatar.jfif"
-              alt="avatar: user"
-              class="user-avatar"
-            />
-            <span class="user-name">islamovartem</span>
-          </a>
-          <!-- /.user-info -->
-          <a href="#" class="exit">
-            <svg width="24" height="24" class="icon icon-exit">
-              <use xlink:href="img/icons.svg#exit"></use>
-            </svg>
-          </a>
+          <div class="user-container">
+            <a href="#" class="user-info">
+              <img
+                width="40"
+                height="40"
+                src="https://www.meme-arsenal.com/memes/8fad74f2d563151e2be1fbc3b3aea87e.jpg"              
+                alt="avatar: user"
+                class="user-avatar"
+              />
+              <span class="user-name">islamovartem</span>
+            </a>
+            <a href="#" class="edit">
+              <svg class="icon icon-edit">
+                <use xlink:href="img/icons.svg#edit"></use>
+              </svg>
+            </a>
+            <!-- /.user-info -->
+            <a href="#" class="exit">
+              <svg width="24" height="24" class="icon icon-exit">
+                <use xlink:href="img/icons.svg#exit"></use>
+              </svg>
+            </a>
+          </div>
+
+          <form class="edit-container">
+            <h2 class="edit-title">Редактировать</h2>
+            <label class="edit-lable">
+              Ваш логин:
+              <input
+                type="text"
+                class="edit-input edit-username login-input"
+                name="username"
+                minlength="3"
+                placeholder="login"
+                required
+            /></label>
+            <label class="lable edit-lable">
+              Ваше фото:
+              <input
+                type="text"
+                class="edit-input edit-photo login-input"
+                name="photo"
+                placeholder="URL-photo"
+            /></label>
+            <button class="edit-user button">Сохранить</button>
+          </form>
+
           <!-- /.exit -->
         </div>
         <!-- /.user -->
@@ -281,7 +351,7 @@
           </ul>
         </nav>
         <!-- /.sidebar-nav -->
-        <a href="/new-post.html" class="button button-new-post">
+        <a href="#" class="button button-new-post">
           <svg width="16px" height="16px" class="icon icon-fire">
             <use xlink:href="img/icons.svg#fire"></use>
           </svg>
@@ -311,6 +381,5 @@
         <!-- /.promo -->
       </aside>
     </div>
-    <script src="/js/main.js"></script>
   </body>
 </html>
